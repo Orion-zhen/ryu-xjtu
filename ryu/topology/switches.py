@@ -787,7 +787,7 @@ class Switches(app_manager.RyuApp):
         # calculate the delay of lldp packet
         for port, port_data in self.ports.items():
             if src_dpid == port.dpid and src_port_no == port.port_no:
-                send_timestamp = port_data.send_timestamp
+                send_timestamp = port_data.timestamp
                 if send_timestamp:
                     port_data.delay = recv_timestamp - send_timestamp
         
